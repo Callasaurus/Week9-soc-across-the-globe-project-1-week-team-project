@@ -1,0 +1,28 @@
+{
+  "name": "codebustersproject",
+  "version": "1.0.0",
+  "description": "Build a back end for our project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node -r dotenv/config app.js",
+    "dev": "nodemon -r dotenv/config app.js",
+    "test": "node --experimental-vm-modules -r dotenv/config node_modules/jest/bin/jest.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "npm": "^9.1.2",
+    "pg": "^8.8.0",
+    "supertest": "^6.3.1"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "jest": "^29.3.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20"
+  },
+  "type": "module"
+}
