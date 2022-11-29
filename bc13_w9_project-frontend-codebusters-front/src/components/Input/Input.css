@@ -24,14 +24,14 @@
 
 .form-items input {
   width: 40vw;
-  height: 7vh;
+  height: 4vh;
   background-color: white;
   border: 1px solid var(--darkColor);
   border-radius: 5px;
   color: var(--darkColor);
   font-size: 100%;
   font-weight: bold;
-  margin: 15px;
+  margin: 10px;
 }
 
 .addButton {
@@ -47,6 +47,16 @@
   margin: 10px;
 }
 
+.addButton:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
 .error {
   color: red;
+}
+
+.add-button-div {
+  display: flex;
+  justify-content: center;
 }

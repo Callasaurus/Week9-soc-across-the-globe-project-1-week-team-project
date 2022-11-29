@@ -1,10 +1,12 @@
 import React from 'react'
 import './ObjectItem.css'
+
 export function ObjectItem(props) {
     
     function onClicks() {
         props.handleEdit()
         props.editing()
+        props.holdEditObject()
     }
 
     return (

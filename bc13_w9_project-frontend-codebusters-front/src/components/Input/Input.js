@@ -3,19 +3,31 @@ import './Input.css'
 import { useForm } from "react-hook-form";
 
 export function Input(props) {
-console.log(props.editOrAdd)
+
+console.log(props.wholeEditObject)
+
 const {
     register,
     handleSubmit,
     reset,
     formState: { errors }
-  } = useForm();
+  } = useForm({ defaultValues: props.wholeEditObject });
+
+  const {
+    register: registerNonEnglish,
+    handleSubmit: handleSubmitNonEnglish,
+    reset: resetNonEnglish,
+    formState: { errors: errorsNonEnglish }
+  } = useForm({ defaultValues: props.wholeEditObject });
 
   const onSubmit = (data) => {
     props.handleNewObject(data);
     props.visibility()
     reset()
+    resetNonEnglish()
   };
+
+useForm({ defaultValues: props.wholeEditObject })
 
 if (props.language === 'englishDefinitions') {
     
@@ -34,8 +46,8 @@ if (props.language === 'englishDefinitions') {
                     required: props.editOrAdd,
                     minLength: 3
                 })} 
-                placeholder="Title of the resource">
-                </input>
+                defaultValue={props.wholeEditObject.title}>
+                </input> 
                 {errors.title && errors.title.type === "required" && (
                     <p className='error'>Title must not be blank</p>
                 )}
@@ -50,7 +62,7 @@ if (props.language === 'englishDefinitions') {
                     required: props.editOrAdd,
                     minLength: 20
                 })} 
-                placeholder="Definition of the resouce topic">
+                defaultValue={props.wholeEditObject.definition}>
                 </input>
                 {errors.definition && errors.definition.type === "required" && (
                     <p className='error'>Definition must not be blank</p>
@@ -65,7 +77,7 @@ if (props.language === 'englishDefinitions') {
                     required: props.editOrAdd,
                     minLength: 10
                 })} 
-                placeholder="Example (image url)">
+                defaultValue={props.wholeEditObject.example}>
                 </input>
                 {errors.example && errors.example.type === "required" && (
                     <p className='error'>Example must not be blank</p>
@@ -80,7 +92,7 @@ if (props.language === 'englishDefinitions') {
                     required: props.editOrAdd,
                     minLength: 10
                 })} 
-                placeholder="Links (url of helpful website(s))">
+                defaultValue={props.wholeEditObject.links}>
                 </input>
                 {errors.links && errors.links.type === "required" && (
                     <p className='error'>Link must not be blank</p>
@@ -96,12 +108,14 @@ if (props.language === 'englishDefinitions') {
                 name="week" {...register("week", {
                     required: props.editOrAdd
                 })} 
-                placeholder="Week content covered (enter a number)">
+                defaultValue={props.wholeEditObject.week}>
                 </input>
                 {errors.week && errors.week.type === "required" && (
                     <p className='error'>Week must not be blank</p>
                 )}
+            <div className="add-button-div">
             <button type="submit" className="addButton">Add</button>
+            </div>
         </form>
     </div>
 )
@@ -114,83 +128,83 @@ if (props.language === 'englishDefinitions') {
         <div className="exitButtonDiv">
             <button className="exitButton" onClick={props.visibility}>X</button>
         </div>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmitNonEnglish(onSubmit)}>
                 <label>English Title</label>
                 <input 
                 type="text" 
                 name="englishtitle" 
-                {...register("englishtitle", {
+                {...registerNonEnglish("englishtitle", {
                     required: props.editOrAdd,
                     minLength: 3
                 })} 
-                placeholder="Title of the resource">
+                defaultValue={props.wholeEditObject.englishtitle}>
                 </input>
-                {errors.englishtitle && errors.englishtitle.type === "required" && (
+                {errorsNonEnglish.englishtitle && errorsNonEnglish.englishtitle.type === "required" && (
                     <p className='error'>Title must not be blank</p>
                 )}
-                {errors.englishtitle && errors.englishtitle.type === "minLength" && (
+                {errorsNonEnglish.englishtitle && errorsNonEnglish.englishtitle.type === "minLength" && (
                     <p className='error'>Title must have at least 4 characters</p>
                 )}
                 <label>Title</label>
                 <input 
                 type="text" 
                 name="title" 
-                {...register("title", {
+                {...registerNonEnglish("title", {
                     required: props.editOrAdd,
                     minLength: 3
                 })} 
-                placeholder="Title of the resource">
+                defaultValue={props.wholeEditObject.title}>
                 </input>
-                {errors.title && errors.title.type === "required" && (
+                {errorsNonEnglish.title && errorsNonEnglish.title.type === "required" && (
                     <p className='error'>Title must not be blank</p>
                 )}
-                {errors.title && errors.title.type === "minLength" && (
+                {errorsNonEnglish.title && errorsNonEnglish.title.type === "minLength" && (
                     <p className='error'>Title must have at least 4 characters</p>
                 )}
                 <label>Definition</label>
                 <input 
                 type="text" 
                 name="definition" 
-                {...register("definition", {
+                {...registerNonEnglish("definition", {
                     required: props.editOrAdd,
                     minLength: 20
                 })} 
-                placeholder="Definition of the resouce topic">
+                defaultValue={props.wholeEditObject.definition}>
                 </input>
-                {errors.definition && errors.definition.type === "required" && (
+                {errorsNonEnglish.definition && errorsNonEnglish.definition.type === "required" && (
                     <p className='error'>Definition must not be blank</p>
                 )}
-                {errors.definition && errors.definition.type === "minLength" && (
+                {errorsNonEnglish.definition && errorsNonEnglish.definition.type === "minLength" && (
                     <p className='error'>Definition must have at least 20 characters</p>
                 )}
                 <label>Example</label>
                 <input 
                 type="text" 
-                name="example" {...register("example", {
+                name="example" {...registerNonEnglish("example", {
                     required: props.editOrAdd,
                     minLength: 10
                 })} 
-                placeholder="Example (image url)">
+                defaultValue={props.wholeEditObject.example}>
                 </input>
-                {errors.example && errors.example.type === "required" && (
+                {errorsNonEnglish.example && errorsNonEnglish.example.type === "required" && (
                     <p className='error'>Example must not be blank</p>
                 )}
-                {errors.example && errors.example.type === "minLength" && (
+                {errorsNonEnglish.example && errorsNonEnglish.example.type === "minLength" && (
                     <p className='error'>Example must have at least 10 characters</p>
                 )}
                 <label>Links</label>
                 <input 
                 type="text" 
-                name="links" {...register("links", {
+                name="links" {...registerNonEnglish("links", {
                     required: props.editOrAdd,
                     minLength: 10
                 })} 
-                placeholder="Links (url of helpful website(s))">
+                defaultValue={props.wholeEditObject.links}>
                 </input>
-                {errors.links && errors.links.type === "required" && (
+                {errorsNonEnglish.links && errorsNonEnglish.links.type === "required" && (
                     <p className='error'>Link must not be blank</p>
                 )}
-                {errors.links && errors.links.type === "minLength" && (
+                {errorsNonEnglish.links && errorsNonEnglish.links.type === "minLength" && (
                     <p className='error'>Link must have at least 10 characters</p>
                 )}
                 <label>Week</label>
@@ -198,15 +212,17 @@ if (props.language === 'englishDefinitions') {
                 type="number"
                 min="0"
                 max="16"
-                name="week" {...register("week", {
+                name="week" {...registerNonEnglish("week", {
                     required: props.editOrAdd
                 })} 
-                placeholder="Week content covered (enter a number)">
+                defaultValue={props.wholeEditObject.week}>
                 </input>
-                {errors.week && errors.week.type === "required" && (
+                {errorsNonEnglish.week && errorsNonEnglish.week.type === "required" && (
                     <p className='error'>Week must not be blank</p>
                 )}
+            <div className="add-button-div">
             <button type="submit" className="addButton">Add</button>
+            </div>
         </form>
     </div>
     )

@@ -31,6 +31,7 @@ function App() {
   // State that will be toggled from true to false depending on editing or adding (for validation purposes)
   const [editOrAdd, setEditOrAdd] = useState(false)
 
+  const [wholeEditObject, setWholeEditObject] = useState([])
   // states for providing border around country buttons in header 
 
   const [isActive, setIsActive] = useState(false);
@@ -100,6 +101,10 @@ function App() {
   function handleObjectState(object) {
     setEditObject(object);
     handleVisibilityEdit();
+  }
+
+  function holdEditObject(object) {
+    setWholeEditObject(object)
   }
 
   // function that creates a new edited object (if values empty, original ones are kept) - called inside handleEdit 
@@ -300,16 +305,16 @@ function App() {
       </div>
 
       <div className="form-container" style={{ visibility: isVisible ? 'visible' : 'hidden' }}>
-        <Input visibility={handleVisibility} handleNewObject={handleNewObject} language={language} editOrAdd={editOrAdd}></Input>
+        <Input visibility={handleVisibility} handleNewObject={handleNewObject} language={language} editOrAdd={editOrAdd} wholeEditObject={wholeEditObject}></Input>
       </div>
 
       <div className="form-container" style={{ visibility: isEditVisible ? 'visible' : 'hidden' }}>
-        <Input visibility={handleVisibilityEdit} handleNewObject={handleEdit} language={language} editOrAdd={editOrAdd}></Input>
+        <Input visibility={handleVisibilityEdit} handleNewObject={handleEdit} language={language} editOrAdd={editOrAdd} wholeEditObject={wholeEditObject}></Input>
       </div>
 
       <div className="main-container">
         <button className="addNewButton" onClick={handleVisibility}>Add New Resource</button>
-        <ObjectList object={object} handleFavourite={favourite} handleDelete={handleDelete} handleEdit={handleObjectState} editing={editing}></ObjectList>
+        <ObjectList object={object} handleFavourite={favourite} handleDelete={handleDelete} handleEdit={handleObjectState} editing={editing} holdEditObject={holdEditObject}></ObjectList>
       </div>
     </div>
   );
