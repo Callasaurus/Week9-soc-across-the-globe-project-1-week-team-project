@@ -1,0 +1,48 @@
+.exitButton {
+  width: 2vw;
+  height: auto;
+  background-color: var(--lightColor);
+  border: 1px solid var(--darkColor);
+  border-radius: 5px;
+  color: var(--darkColor);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 100%;
+  font-weight: bold;
+  padding: 10px;
+  margin: 10px;
+}
+
+.form-items {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding-left: 80%;
+  padding-right: 80%;
+}
+
+.form-items input {
+  width: 40vw;
+  height: 7vh;
+  background-color: white;
+  border: 1px solid var(--darkColor);
+  border-radius: 5px;
+  color: var(--darkColor);
+  font-size: 100%;
+  font-weight: bold;
+  margin: 15px;
+}
+
+.addButton {
+  width: 15vw;
+  height: 5vh;
+  background-color: var(--lightColor);
+  border: 1px solid var(--darkColor);
+  border-radius: 5px;
+  color: var(--darkColor);
+  font-size: 100%;
+  font-weight: bold;
+  padding: 10px;
+  margin: 10px;
+}

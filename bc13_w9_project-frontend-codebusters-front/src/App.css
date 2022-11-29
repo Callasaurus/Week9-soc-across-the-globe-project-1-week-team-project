@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding:0;
+  font-family: Georgia, serif;
+  --darkColor: #1A1B41;
+  --lightColor: #C2E7DA;
+}
+
+:root {
+  background-color: var(--darkColor);
+  color: var(--lightColor);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-page {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: auto;
+  width: 100vw;
+  background-color: var(--darkColor);
+  display: flex;
+  justify-content: center;
+}
+
+.form-container {
+  position: fixed;
+  top: 10%;
+  left: 25%;
+  height: 80%;
+  width: 50%;
+  background-color: var(--darkColor);
+  display: flex;
+  justify-content: center;
+  border: 5px solid #C2E7DA;
+  border-radius: 15px;
+}
+
+.addNewButton{
+  width: 15vw;
+  height: 5vh;
+  background-color: var(--lightColor);
+  border: 1px solid var(--darkColor);
+  border-radius: 5px;
+  color: var(--darkColor);
+  font-size: 100%;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.addNewButton:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

@@ -1,0 +1,119 @@
+.imageDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 15vw;
+  height: auto;
+}
+
+.headerButtons {
+  display: flex;
+  margin-left: 1200px;
+  padding: 10px;
+}
+
+.englishButton {
+  align-content: flex-start;
+}
+
+.headerTitle {
+  padding: 10px;
+  white-space: pre;
+}
+
+.title,
+.h2title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--lightColor);
+}
+
+.englishButton {
+  background-image: url(../../images/British\ flag.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 5vw;
+  height: 5vh;
+  margin: 2%;
+}
+
+.highlightedEN {
+  background-image: url(../../images/British\ flag.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 5vw;
+  height: 5vh;
+  margin: 2%;
+  border-color: white;
+  border-width: 4px;
+}
+
+.spanishButton {
+  background-image: url(../../images/Spanish\ flag.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 5vw;
+  height: 5vh;
+  margin: 2%;
+}
+
+.highlightedES {
+  background-image: url(../../images/Spanish\ flag.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 5vw;
+  height: 5vh;
+  margin: 2%;
+  border-color: white;
+  border-width: 4px;
+}
+
+.frenchButton {
+  background-image: url(../../images/French\ flag.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 5vw;
+  height: 5vh;
+  margin: 2%;
+}
+
+.highlightedFR {
+  background-image: url(../../images/French\ flag.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 5vw;
+  height: 5vh;
+  margin: 2%;
+  border-color: white;
+  border-width: 4px;
+}
+
+.germanButton {
+  background-image: url(../../images/German\ flag.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 5vw;
+  height: 5vh;
+  margin: 2%;
+}
+
+.highlightedDE {
+  background-image: url(../../images/German\ flag.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 5vw;
+  height: 5vh;
+  margin: 2%;
+  border-color: white;
+  border-width: 4px;
+}

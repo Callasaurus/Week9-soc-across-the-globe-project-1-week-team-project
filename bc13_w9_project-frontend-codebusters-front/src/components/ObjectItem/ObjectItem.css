@@ -1,0 +1,88 @@
+img {
+  width: 300px;
+  border: 2px solid var(--darkColor);
+  padding: 1%;
+  margin: 1%;
+}
+
+.item-container {
+  display: flex;
+  width: 80%;
+  height: auto;
+  border: 3px solid var(--lightColor);
+  background-color: white;
+  color: var(--darkColor);
+  margin: 15px;
+  border-radius: 15px;
+}
+
+.item-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+
+.titleDiv {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.titles {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--darkColor);
+  text-decoration: underline;
+  margin-right: 3rem;
+}
+
+.week {
+  text-decoration: underline;
+  font-size: 1.25rem;
+  padding-bottom: 5%;
+}
+
+.linksDiv {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.buttonDiv {
+  margin-top: auto;
+}
+
+.buttons {
+  width: 8em;
+  height: 2em;
+  background-color: var(--darkColor);
+  border: 1px solid var(--darkColor);
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: auto;
+}
+
+.buttons:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.highlighted-fave {
+  width: 8em;
+  height: 2em;
+  background-color: var(--darkColor);
+  border: 1px solid var(--darkColor);
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: auto;
+  border-color: white;
+  border-width: 2px;
+}
