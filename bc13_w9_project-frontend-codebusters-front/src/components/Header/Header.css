@@ -10,8 +10,9 @@
 
 .headerButtons {
   display: flex;
-  margin-left: 1200px;
-  padding: 10px;
+  justify-content: flex-end;
+  /* margin-left: 1200px;
+  padding: 10px; */
 }
 
 .englishButton {
@@ -46,6 +47,7 @@
   background-repeat: no-repeat;
   background-position: center;
   width: 5vw;
+  min-width: 100px;
   height: 5vh;
   margin: 2%;
   border-color: white;

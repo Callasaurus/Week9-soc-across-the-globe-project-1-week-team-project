@@ -1,25 +1,25 @@
 .start-container {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 .imageDivs {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 70vh;
 }
 
 .animation-logo {
-  margin-top: 6%;
+  margin-top: 3%;
 }
 
 .chooseYourLanguage {
   color: var(--lightColor);
   font-size: 2rem;
-  padding-bottom: 4%;
-  padding-top: 5%;
+  padding-bottom: 1%;
+  padding-top: 1%;
   text-align: center;
 }
 
