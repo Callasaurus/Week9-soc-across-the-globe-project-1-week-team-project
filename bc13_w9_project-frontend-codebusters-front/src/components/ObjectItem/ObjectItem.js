@@ -1,9 +1,10 @@
 import React from 'react'
 import './ObjectItem.css'
-
+import { Input } from '../Input/Input'
 export function ObjectItem(props) {
     return (
         <div className="item-container">
+        <Input></Input>
             <img alt="examples" src={props.example}></img>
 
             <div className="item-text">

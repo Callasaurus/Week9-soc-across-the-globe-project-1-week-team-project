@@ -29,7 +29,7 @@ if (props.language === 'englishDefinitions') {
                     name="title" 
                     {...register("title", {
                         required: true,
-                        minLength: 4
+                        minLength: 3
                     })} 
                     placeholder="Title of the resource">
                     </input>
@@ -84,13 +84,29 @@ if (props.language === 'englishDefinitions') {
             <button className="exitButton" onClick={props.visibility}>X</button>
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>
+                <label>English Title</label>
+                <input 
+                type="text" 
+                name="englishtitle" 
+                {...register("englishtitle", {
+                    required: true,
+                    minLength: 3
+                })} 
+                placeholder="Title of the resource">
+                </input>
+                {errors.englishtitle && errors.englishtitle.type === "required" && (
+                    <p>Title must not be blank</p>
+                )}
+                {errors.englishtitle && errors.englishtitle.type === "minLength" && (
+                    <p>Title must have at least 4 characters</p>
+                )}
                 <label>Title</label>
                 <input 
                 type="text" 
                 name="title" 
                 {...register("title", {
                     required: true,
-                    minLength: 4
+                    minLength: 3
                 })} 
                 placeholder="Title of the resource">
                 </input>
