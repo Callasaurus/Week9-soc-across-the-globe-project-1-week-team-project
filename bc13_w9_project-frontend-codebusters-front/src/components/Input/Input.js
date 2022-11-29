@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 
 export function Input(props) {
 
-console.log(props.wholeEditObject)
+console.log(props.editOrAdd)
 
 const {
     register,
@@ -26,8 +26,6 @@ const {
     reset()
     resetNonEnglish()
   };
-
-useForm({ defaultValues: props.wholeEditObject })
 
 if (props.language === 'englishDefinitions') {
     
