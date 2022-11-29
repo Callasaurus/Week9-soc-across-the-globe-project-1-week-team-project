@@ -3,19 +3,22 @@ import './Input.css'
 import { useForm } from "react-hook-form";
 
 export function Input(props) {
-
+console.log(props.editOrAdd)
 const {
     register,
     handleSubmit,
+    reset,
     formState: { errors }
   } = useForm();
 
   const onSubmit = (data) => {
     props.handleNewObject(data);
     props.visibility()
+    reset()
   };
 
 if (props.language === 'englishDefinitions') {
+    
     return (
         <div className="form-items">
 
@@ -28,7 +31,7 @@ if (props.language === 'englishDefinitions') {
                     type="text" 
                     name="title" 
                     {...register("title", {
-                        required: true,
+                        required: props.editOrAdd,
                         minLength: 3
                     })} 
                     placeholder="Title of the resource">
@@ -44,7 +47,7 @@ if (props.language === 'englishDefinitions') {
                     type="text" 
                     name="definition" 
                     {...register("definition", {
-                        required: true,
+                        required: props.editOrAdd,
                         minLength: 20
                     })} 
                     placeholder="Definition of the resouce topic">
@@ -56,16 +59,28 @@ if (props.language === 'englishDefinitions') {
                         <p>Definition must have at least 20 characters</p>
                     )}
                     <label>Example</label>
-                    <input type="text" name="example" {...register("example")} placeholder="Example (image url)"></input>
+                    <input 
+                    type="text" 
+                    name="example" {...register("example", {
+                    required: props.editOrAdd,
+                    minLength: 10
+                    })} 
+                    placeholder="Example (image url)"></input>
                     <label>Links</label>
-                    <input type="text" name="links" {...register("links")} placeholder="Links (url of helpful website(s))"></input>
+                    <input 
+                    type="text" 
+                    name="links" {...register("links", {
+                    required: props.editOrAdd,
+                    minLength: 10
+                    })} 
+                    placeholder="Links (url of helpful website(s))"></input>
                     <label>Week</label>
                     <input 
                     type="number"
                     min="0"
                     max="16"
                     name="week" {...register("week", {
-                        required: true
+                        required: props.editOrAdd
                     })} 
                     placeholder="Week content covered (enter a number)">
                     </input>
@@ -76,7 +91,9 @@ if (props.language === 'englishDefinitions') {
             </form>
         </div>
     )
+
 } else {
+    
     return (
         <div className="form-items">
 
@@ -89,7 +106,7 @@ if (props.language === 'englishDefinitions') {
                 type="text" 
                 name="englishtitle" 
                 {...register("englishtitle", {
-                    required: true,
+                    required: props.editOrAdd,
                     minLength: 3
                 })} 
                 placeholder="Title of the resource">
@@ -105,7 +122,7 @@ if (props.language === 'englishDefinitions') {
                 type="text" 
                 name="title" 
                 {...register("title", {
-                    required: true,
+                    required: props.editOrAdd,
                     minLength: 3
                 })} 
                 placeholder="Title of the resource">
@@ -121,7 +138,7 @@ if (props.language === 'englishDefinitions') {
                 type="text" 
                 name="definition" 
                 {...register("definition", {
-                    required: true,
+                    required: props.editOrAdd,
                     minLength: 20
                 })} 
                 placeholder="Definition of the resouce topic">
@@ -133,16 +150,28 @@ if (props.language === 'englishDefinitions') {
                     <p>Definition must have at least 20 characters</p>
                 )}
                 <label>Example</label>
-                <input type="text" name="example" {...register("example")} placeholder="Example (image url)"></input>
+                <input 
+                type="text" 
+                name="example" {...register("example", {
+                    required: props.editOrAdd,
+                    minLength: 10
+                })} 
+                placeholder="Example (image url)"></input>
                 <label>Links</label>
-                <input type="text" name="links" {...register("links")} placeholder="Links (url of helpful website(s))"></input>
+                <input 
+                type="text" 
+                name="links" {...register("links", {
+                    required: props.editOrAdd,
+                    minLength: 10
+                })} 
+                placeholder="Links (url of helpful website(s))"></input>
                 <label>Week</label>
                 <input 
                 type="number"
                 min="0"
                 max="16"
                 name="week" {...register("week", {
-                    required: true
+                    required: props.editOrAdd
                 })} 
                 placeholder="Week content covered (enter a number)">
                 </input>

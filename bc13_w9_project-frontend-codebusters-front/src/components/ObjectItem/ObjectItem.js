@@ -1,10 +1,14 @@
 import React from 'react'
 import './ObjectItem.css'
-import { Input } from '../Input/Input'
 export function ObjectItem(props) {
+    
+    function onClicks() {
+        props.handleEdit()
+        props.editing()
+    }
+
     return (
         <div className="item-container">
-        <Input></Input>
             <img alt="examples" src={props.example}></img>
 
             <div className="item-text">
@@ -24,7 +28,7 @@ export function ObjectItem(props) {
 
                 <div className="buttonDiv">
                     <button className="buttons" onClick={props.handleDelete}>Delete  🗑</button>
-                    <button className="buttons" onClick={props.handleEdit}>Edit  📝</button>
+                    <button className="buttons" onClick={onClicks}>Edit  📝</button>
                     <button className="buttons" onClick={props.handleFavourite}>Favourite ⭐️</button>
                 </div>
             </div>

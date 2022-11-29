@@ -28,10 +28,11 @@ function App() {
   const [faveArray, setfaveArray] = useState([])
   // State for languages
   const [language, setLanguage] = useState('englishDefinitions')
-
+  // State that will be toggled from true to false depending on editing or adding (for validation purposes)
+  const [editOrAdd, setEditOrAdd] = useState(false)
 
   // states for providing border around country buttons in header 
-  
+
   const [isActive, setIsActive] = useState(false);
   const [isActiveES, setIsActiveES] = useState(false);
   const [isActiveFR, setIsActiveFR] = useState(false);
@@ -75,10 +76,11 @@ function App() {
     setObject(objectToAddOnScreen);
   }
 
-  // function that toggles whether the 'Add New Resource' box is visible or not (toggled on button click)
+  // function that toggles whether the 'Add New Resource' box is visible or not (toggled on button click) & calls the addingNotEditing function
 
   const handleVisibility = event => {
     setVisible(current => !current);
+    addingNotEditing()
   }
 
   // edit request for specific object (handed down edit-sepcific input component)
@@ -269,6 +271,18 @@ function App() {
     }
   };
 
+  // function that changes editOrAdd state to false (which is passed down to ObjectItem and called on edit button click)
+
+  function editing() {
+    setEditOrAdd(false)
+  }
+
+  // function that changes editOrAdd state to true (which called on add new resource button click)
+
+  function addingNotEditing() {
+    setEditOrAdd(true)
+  }
+
   return (
     <div className="App">
       <div className="start-page" style={{ visibility: isStartPageVisible ? 'visible' : 'hidden' }}>
@@ -286,16 +300,16 @@ function App() {
       </div>
 
       <div className="form-container" style={{ visibility: isVisible ? 'visible' : 'hidden' }}>
-        <Input visibility={handleVisibility} handleNewObject={handleNewObject} language={language}></Input>
+        <Input visibility={handleVisibility} handleNewObject={handleNewObject} language={language} editOrAdd={editOrAdd}></Input>
       </div>
 
       <div className="form-container" style={{ visibility: isEditVisible ? 'visible' : 'hidden' }}>
-        <Input visibility={handleVisibilityEdit} handleNewObject={handleEdit} language={language}></Input>
+        <Input visibility={handleVisibilityEdit} handleNewObject={handleEdit} language={language} editOrAdd={editOrAdd}></Input>
       </div>
 
       <div className="main-container">
         <button className="addNewButton" onClick={handleVisibility}>Add New Resource</button>
-        <ObjectList object={object} handleFavourite={favourite} handleDelete={handleDelete} handleEdit={handleObjectState}></ObjectList>
+        <ObjectList object={object} handleFavourite={favourite} handleDelete={handleDelete} handleEdit={handleObjectState} editing={editing}></ObjectList>
       </div>
     </div>
   );
