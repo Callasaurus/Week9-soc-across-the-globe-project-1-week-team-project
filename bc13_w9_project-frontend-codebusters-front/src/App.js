@@ -30,8 +30,9 @@ function App() {
   const [language, setLanguage] = useState('englishDefinitions')
   // State that will be toggled from true to false depending on editing or adding (for validation purposes)
   const [editOrAdd, setEditOrAdd] = useState(false)
-
+  // state for holding object to edit to be sent to pre-populate edit forms
   const [wholeEditObject, setWholeEditObject] = useState([])
+
   // states for providing border around country buttons in header 
 
   const [isActive, setIsActive] = useState(false);
