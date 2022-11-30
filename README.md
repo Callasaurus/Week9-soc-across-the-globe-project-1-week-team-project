@@ -72,7 +72,7 @@ Install dependencies
   npm install
 ```
 
-Start the server
+Open React app
 
 ```bash
   npm start
