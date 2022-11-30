@@ -10,16 +10,8 @@
 
 .headerButtons {
   display: flex;
-  justify-content: flex-end;
-  align-self: flex-end;
-  /* margin-left: 1200px;
-  padding: 10px; */
-}
-
-.headerDiv{
-  display: flex;
-  flex-direction: column;
-  width: 90vw
+  margin-left: 1200px;
+  padding: 10px;
 }
 
 .englishButton {
@@ -38,7 +30,7 @@
   color: var(--lightColor);
 }
 
-.englishButton {
+#ebutton {
   background-image: url(../../images/British\ flag.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -48,19 +40,12 @@
   margin: 2%;
 }
 
-.highlightedEN {
-  background-image: url(../../images/British\ flag.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 5vw;
-  height: 5vh;
-  margin: 2%;
+.highlighted {
   border-color: white;
   border-width: 4px;
 }
 
-.spanishButton {
+#sbutton {
   background-image: url(../../images/Spanish\ flag.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -70,19 +55,7 @@
   margin: 2%;
 }
 
-.highlightedES {
-  background-image: url(../../images/Spanish\ flag.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 5vw;
-  height: 5vh;
-  margin: 2%;
-  border-color: white;
-  border-width: 4px;
-}
-
-.frenchButton {
+#fbutton {
   background-image: url(../../images/French\ flag.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -92,19 +65,7 @@
   margin: 2%;
 }
 
-.highlightedFR {
-  background-image: url(../../images/French\ flag.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 5vw;
-  height: 5vh;
-  margin: 2%;
-  border-color: white;
-  border-width: 4px;
-}
-
-.germanButton {
+#gbutton {
   background-image: url(../../images/German\ flag.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -112,16 +73,4 @@
   width: 5vw;
   height: 5vh;
   margin: 2%;
-}
-
-.highlightedDE {
-  background-image: url(../../images/German\ flag.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 5vw;
-  height: 5vh;
-  margin: 2%;
-  border-color: white;
-  border-width: 4px;
 }

@@ -28,18 +28,9 @@ function App() {
   const [faveArray, setfaveArray] = useState([])
   // State for languages
   const [language, setLanguage] = useState('englishDefinitions')
-  // State that will be toggled from true to false depending on editing or adding (for validation purposes)
-  const [editOrAdd, setEditOrAdd] = useState(false)
   // state for holding object to edit to be sent to pre-populate edit forms
   const [wholeEditObject, setWholeEditObject] = useState([])
 
-
-  // states for providing border around country buttons in header 
-
-  const [isActive, setIsActive] = useState(false);
-  const [isActiveES, setIsActiveES] = useState(false);
-  const [isActiveFR, setIsActiveFR] = useState(false);
-  const [isActiveDE, setIsActiveDE] = useState(false);
 
   // Uncomment to store favourites in local storage (& add JSON.parse code inside the faveArray useState)
 
@@ -92,7 +83,6 @@ function App() {
 
   const handleVisibility = event => {
     setVisible(current => !current);
-    addingNotEditing()
     setWholeEditObject([])
   }
 
@@ -237,48 +227,13 @@ function App() {
 
   function displayFavourite() {
     setObject(faveArray);
-    setIsActive(current => !current);
   }
 
-  // functions for: choosing the language; handling the white borders around them when clicked in header; calling the changeStartState function to close the initial landing page (StartPage) 
+  // change the language from a button click on either startpage or header.
 
-  function handleClickSpanish() {
-    setLanguage('spanishDefinitions');
+  function handleLanguage(e) {
+    setLanguage(e.target.name)
     changeStartState();
-    setIsActiveES(true);
-    setIsActive(false);
-    setIsActiveDE(false);
-    setIsActiveFR(false);
-    setObject([]);
-  }
-
-  function handleClickFrench() {
-    setLanguage('frenchDefinitions');
-    changeStartState();
-    setIsActiveFR(true);
-    setIsActive(false);
-    setIsActiveDE(false);
-    setIsActiveES(false);
-    setObject([]);
-  }
-
-  function handleClickGerman() {
-    setLanguage('germanDefinitions');
-    changeStartState();
-    setIsActiveDE(true);
-    setIsActive(false);
-    setIsActiveFR(false);
-    setIsActiveES(false);
-    setObject([]);
-  }
-
-  function handleClickEnglish() {
-    setLanguage('englishDefinitions');
-    changeStartState();
-    setIsActive(true);
-    setIsActiveES(false);
-    setIsActiveFR(false);
-    setIsActiveDE(false);
     setObject([]);
   }
 
@@ -290,28 +245,15 @@ function App() {
     }
   };
 
-  // function that changes editOrAdd state to false (which is passed down to ObjectItem and called on edit button click)
-
-  function editing() {
-    setEditOrAdd(false)
-  }
-
-  // function that changes editOrAdd state to true (which called on add new resource button click)
-
-  function addingNotEditing() {
-    setEditOrAdd(true)
-  }
-
   return (
     <div className="App">
       <div className="start-page" style={{ visibility: isStartPageVisible ? 'visible' : 'hidden' }}>
-        <StartPage changeSpanish={handleClickSpanish} changeEnglish={handleClickEnglish} changeGerman={handleClickGerman} changeFrench={handleClickFrench}></StartPage>
+        <StartPage handleLanguage={handleLanguage}></StartPage>
       </div>
-
 
       <div className="main-container">
         <div className="languages">
-          <Header isActive={isActive} isActiveES={isActiveES} isActiveFR={isActiveFR} isActiveDE={isActiveDE} handleSpanish={handleClickSpanish} handleFrench={handleClickFrench} handleGerman={handleClickGerman} handleEnglish={handleClickEnglish}></Header>
+          <Header language={language} handleLanguage={handleLanguage}></Header>
         </div>
 
         <div className="search-bar">
@@ -320,16 +262,16 @@ function App() {
       </div>
 
       <div className="form-container" style={{ visibility: isVisible ? 'visible' : 'hidden' }}>
-        <Input visibility={handleVisibility} handleNewObject={handleNewObject} language={language} editOrAdd={editOrAdd} wholeEditObject={wholeEditObject}></Input>
+        <Input visibility={handleVisibility} handleNewObject={handleNewObject} language={language} required={true} wholeEditObject={wholeEditObject}></Input>
       </div>
 
       <div className="form-container" style={{ visibility: isEditVisible ? 'visible' : 'hidden' }}>
-        <Input visibility={handleVisibilityEdit} handleNewObject={handleEdit} language={language} editOrAdd={editOrAdd} wholeEditObject={wholeEditObject}></Input>
+        <Input visibility={handleVisibilityEdit} handleNewObject={handleEdit} language={language} required={false} wholeEditObject={wholeEditObject}></Input>
       </div>
 
       <div className="main-container">
         <button className="addNewButton" onClick={handleVisibility}>Add New Resource</button>
-        <ObjectList object={object} handleFavourite={favourite} handleDelete={handleDelete} handleEdit={handleObjectState} editing={editing} holdEditObject={holdEditObject}></ObjectList>
+        <ObjectList object={object} handleFavourite={favourite} handleDelete={handleDelete} handleEdit={handleObjectState} holdEditObject={holdEditObject}></ObjectList>
       </div>
     </div>
   );

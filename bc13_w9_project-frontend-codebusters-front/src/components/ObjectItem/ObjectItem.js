@@ -4,14 +4,6 @@ import './ObjectItem.css'
 // Component for displaying object items (mapped inside ObjectList) -- add, delete and edit functionality passed down from App
 
 export function ObjectItem(props) {
-    
-    // function that facilitates editing and states for pre-filling edit input boxes
-
-    function onClicks() {
-        props.handleEdit()
-        props.editing()
-        props.holdEditObject()
-    }
 
     return (
         <div className="item-container">
@@ -34,7 +26,7 @@ export function ObjectItem(props) {
 
                 <div className="buttonDiv">
                     <button className="buttons" onClick={props.handleDelete}>Delete  🗑</button>
-                    <button className="buttons" onClick={onClicks}>Edit  📝</button>
+                    <button className="buttons" onClick={props.handleEdit}>Edit  📝</button>
                     <button className="buttons" onClick={props.handleFavourite}>Favourite ⭐️</button>
                 </div>
             </div>
