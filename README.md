@@ -80,3 +80,9 @@ Start the server
 ```bash
   npm run dev
 ```
+
+Run supertest tests 
+
+```bash
+  npm run test OR npm run test -- <test file name>
+```
