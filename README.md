@@ -2,11 +2,17 @@
 
 ![Logo](https://i.postimg.cc/Dwp8SNVr/Who-are-you-gonna-call-1.jpg)
 
-# School of Code Across the Globe
+# School of Code Across the Globe (1 week team project)
 
-Our brief: to create an app that would help a bootcamper.
+Our brief: create a full-stack application that will improve the lives of people like ourselves - bootcampers. 
+          Things to consider: 
+                              - How to enhance the remote experience of a bootcamper
+                              - What can help them with the vast amount of learning there is to do as a new developer?
+                              - What do they need?
+                              - What problem might they have that your application could solve for them?
+                              - How can you get into the mindset of your user and keep them at the centre of your problem-solving?
 
-Our app: help ALL bootcampers to understand new terms in English but also in different languages.
+Our app: a full-stack learning resource application that displays data (will operational CRUD routes and functionality) in 4 of the main European languages. This was inspired by one of the team members, Andres, who is currently on the bootcamp and learning to code in his second language! The app is designed to be a useful, pratical and accessible resource tool for a wide range of people. 
 
 ## Skills
 
