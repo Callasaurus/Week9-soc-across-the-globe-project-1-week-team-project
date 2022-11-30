@@ -11,7 +11,7 @@ Our app: help ALL bootcampers to understand new terms in English but also in dif
 ## Skills
 
 - React
-- Sql
+- SQL
 - CSS
 - Express
 
@@ -19,7 +19,7 @@ Testing:
 - Supertest
 - Jest
 - Cypress
-- React testing 
+- React testing library 
 
 
 ## Color Reference
@@ -29,7 +29,7 @@ Testing:
 | Darker colour | #1A1B41 |
 | Lighter colour| #C2E7DA |
 
-We choose these colours to help with accessibility so the app truely was for all. We also checked how these colours worked with colour blind things. 
+We choose these colours to help with accessibility so the app was suitable for all. We also checked to make sure that the colour scheme was appropriate for those with colour blindness. 
 
 
 ## Authors
