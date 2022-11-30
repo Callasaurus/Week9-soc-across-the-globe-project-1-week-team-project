@@ -1,8 +1,8 @@
 import { pool } from "../index.js"
-import { dropTweetsTableES } from "../helpersES.js"
+import { dropObjectTableES } from "../helpersES.js"
 
 try {
-    await dropTweetsTableES();
+    await dropObjectTableES();
     console.log("Dropped all tables")
 } catch (err) {
     console.log(err)

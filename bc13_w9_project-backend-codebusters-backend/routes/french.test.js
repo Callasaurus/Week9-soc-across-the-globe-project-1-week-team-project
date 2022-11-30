@@ -1,11 +1,11 @@
 import request from "supertest"
 import { expect, test } from "@jest/globals"
 import app from "../app.js"
-import { resetTweetsTableFR } from "../db/helpersFR.js"
+import { resetObjectTableFR } from "../db/helpersFR.js"
 import { pool } from "../db/index.js"
 
 beforeEach(() => {
-    return resetTweetsTableFR();
+    return resetObjectTableFR();
 });
 
 test("GET all objects", async function () {
@@ -122,7 +122,7 @@ test("EDIT an object by id", async function () {
 })
 
 afterAll(() => {
-    return resetTweetsTableFR();
+    return resetObjectTableFR();
 });
     
 afterAll(() => {

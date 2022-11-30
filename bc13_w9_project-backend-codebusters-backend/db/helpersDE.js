@@ -1,16 +1,16 @@
 import { pool } from "./index.js"
 
-export async function createTweetsTableDE() {
+export async function createObjectTableDE() {
   return await pool.query(
     "CREATE TABLE IF NOT EXISTS germanDefinitions (id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, englishtitle TEXT, title TEXT, definition TEXT, example TEXT, links TEXT, week INT);"
   );
 }
 
-export async function dropTweetsTableDE() {
+export async function dropObjectTableDE() {
   return await pool.query("DROP TABLE IF EXISTS germanDefinitions;");
 }
 
-export async function populateTweetsTableDE() {
+export async function populateObjectTableDE() {
   const objects =  [
     {
         "englishtitle": "API",
@@ -181,10 +181,10 @@ export async function populateTweetsTableDE() {
   );
 }
 
-export async function resetTweetsTableDE() {
+export async function resetObjectTableDE() {
   return [
-    await dropTweetsTableDE(),
-    await createTweetsTableDE(),
-    await populateTweetsTableDE(),
+    await dropObjectTableDE(),
+    await createObjectTableDE(),
+    await populateObjectTableDE(),
   ];
 }

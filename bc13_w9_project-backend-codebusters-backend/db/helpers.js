@@ -1,16 +1,16 @@
 import { pool } from "./index.js"
 
-export async function createTweetsTable() {
+export async function createObjectTable() {
   return await pool.query(
     "CREATE TABLE IF NOT EXISTS englishDefinitions (id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, title TEXT, definition TEXT, example TEXT, links TEXT, week INT);"
   );
 }
 
-export async function dropTweetsTable() {
+export async function dropObjectTable() {
   return await pool.query("DROP TABLE IF EXISTS englishDefinitions;");
 }
 
-export async function populateTweetsTable() {
+export async function populateObjectTable() {
   const objects =   [
     {
         "title": "Array",
@@ -168,11 +168,11 @@ export async function populateTweetsTable() {
   );
 }
 
-export async function resetTweetsTable() {
+export async function resetObjectTable() {
   return [
-    await dropTweetsTable(),
-    await createTweetsTable(),
-    await populateTweetsTable(),
+    await dropObjectTable(),
+    await createObjectTable(),
+    await populateObjectTable(),
   ];
 }
 
