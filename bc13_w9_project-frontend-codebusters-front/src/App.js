@@ -42,11 +42,11 @@ function App() {
 
   // Uncomment to store favourites in local storage (& add JSON.parse code inside the faveArray useState)
 
-  // useEffect(() => {
-  //   localStorage.setItem('fave', JSON.stringify(faveArray));
-  // }, [faveArray]);
-  
-  // [JSON.parse(localStorage.getItem('fave'))]
+      // useEffect(() => {
+      //   localStorage.setItem('fave', JSON.stringify(faveArray));
+      // }, [faveArray]);
+      
+      // [JSON.parse(localStorage.getItem('fave'))]
 
 
   // fetch request for all objects (called inside handleClick)
