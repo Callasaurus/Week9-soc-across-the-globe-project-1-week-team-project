@@ -45,7 +45,7 @@ function App() {
   // useEffect(() => {
   //   localStorage.setItem('fave', JSON.stringify(faveArray));
   // }, [faveArray]);
-
+  
   // [JSON.parse(localStorage.getItem('fave'))]
 
 
