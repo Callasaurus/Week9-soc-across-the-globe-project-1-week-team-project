@@ -17,9 +17,12 @@ Our app: a full-stack learning resource application that displays data (will ope
 
 ## Skills
 
+Tools and languages:
 - React
+- JavaScript
 - SQL
 - CSS
+- Node.js
 - Express
 
 Testing:
