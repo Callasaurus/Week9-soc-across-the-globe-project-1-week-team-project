@@ -44,6 +44,11 @@ We choose these colours to help with accessibility so the app was suitable for a
 
 https://user-images.githubusercontent.com/105207906/204262690-acd4b543-825e-4b80-b33a-9ba93a427fa6.mov
 
+# How to clone the repo:
+
+```bash
+  git clone https://github.com/Callasaurus/soc-across-the-globe-project.git
+```
 
 # How to run the front end:
 
