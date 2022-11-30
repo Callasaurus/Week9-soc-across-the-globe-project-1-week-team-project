@@ -4,8 +4,6 @@ import { useForm } from "react-hook-form";
 
 export function Input(props) {
 
-console.log(props)
-
 // first form 
 
 const {
