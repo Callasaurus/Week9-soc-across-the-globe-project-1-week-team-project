@@ -10,7 +10,7 @@ Our app: help ALL bootcampers to understand new terms in English but also in dif
 ## Skills
 
 - React
-- Sql
+- SQL
 - CSS
 - Express
 
@@ -18,7 +18,7 @@ Testing:
 - Supertest
 - Jest
 - Cypress
-- React testing 
+- React Testing Library
 
 
 ## Color Reference
