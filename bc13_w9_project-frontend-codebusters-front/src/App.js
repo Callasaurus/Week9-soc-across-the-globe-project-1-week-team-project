@@ -4,7 +4,7 @@ import { Header } from './components/Header/Header.js'
 import { Input } from './components/Input/Input.js'
 import { ObjectList } from './components/ObjectList/ObjectList.js'
 import { StartPage } from './components/StartPage/StartPage.js'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const url = "http://localhost:3001/api"
 
@@ -39,6 +39,16 @@ function App() {
   const [isActiveES, setIsActiveES] = useState(false);
   const [isActiveFR, setIsActiveFR] = useState(false);
   const [isActiveDE, setIsActiveDE] = useState(false);
+
+  console.log(localStorage)
+
+  // Uncomment to store favourites in local storage (& add line 51 code inside the faveArray useState)
+
+  // useEffect(() => {
+  //   localStorage.setItem('fave', JSON.stringify(faveArray));
+  // }, [faveArray]);
+
+  // [JSON.parse(localStorage.getItem('fave'))]
 
   // fetch request for all objects (called inside handleClick)
 
