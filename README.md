@@ -26,8 +26,8 @@ Testing:
 
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| Darker colour | (https://via.placeholder.com/10/1A1B41?text=+) #1A1B41 |
-| Lighter colour| (https://via.placeholder.com/10/C2E7DA?text=+) #C2E7DA |
+| Darker colour | #1A1B41 |
+| Lighter colour| #C2E7DA |
 
 We choose these colours to help with accessibility so the app truely was for all. We also checked how these colours worked with colour blind things. 
 
