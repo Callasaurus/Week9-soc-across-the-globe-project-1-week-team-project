@@ -2,7 +2,6 @@ import React from "react";
 import {expect} from '@jest/globals';
 import {render, screen} from '@testing-library/react'
 import { ObjectItem } from "./ObjectItem";
-import {App} from "../../App";
 import '@testing-library/jest-dom'
 
 
@@ -29,9 +28,7 @@ describe('Object item', () => {
     buttonClick[0].click();
     buttonClick[1].click();
     buttonClick[2].click();
-
     });
 
-   
 });
 

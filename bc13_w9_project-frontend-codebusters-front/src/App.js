@@ -42,11 +42,11 @@ function App() {
 
   // Uncomment to store favourites in local storage (& add JSON.parse code inside the faveArray useState)
 
-  // useEffect(() => {
-  //   localStorage.setItem('fave', JSON.stringify(faveArray));
-  // }, [faveArray]);
-
-  // [JSON.parse(localStorage.getItem('fave'))]
+      // useEffect(() => {
+      //   localStorage.setItem('fave', JSON.stringify(faveArray));
+      // }, [faveArray]);
+      
+      // [JSON.parse(localStorage.getItem('fave'))]
 
 
   // fetch request for all objects (called inside handleClick)
@@ -87,7 +87,7 @@ function App() {
     setObject(objectToAddOnScreen);
   }
 
-  // function that toggles whether the 'Add New Resource' box is visible or not (toggled on button click) & calls the addingNotEditing function
+  // function that: toggles whether the 'Add New Resource' box is visible or not (toggled on button click); calls the addingNotEditing function; sets the wholeEditObject array to empty array (resetting input fields for add new resource)
 
   const handleVisibility = event => {
     setVisible(current => !current);
