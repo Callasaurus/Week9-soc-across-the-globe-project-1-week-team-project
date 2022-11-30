@@ -33,6 +33,7 @@ function App() {
   // state for holding object to edit to be sent to pre-populate edit forms
   const [wholeEditObject, setWholeEditObject] = useState([])
 
+
   // states for providing border around country buttons in header 
 
   const [isActive, setIsActive] = useState(false);
@@ -305,6 +306,7 @@ function App() {
       <div className="start-page" style={{ visibility: isStartPageVisible ? 'visible' : 'hidden' }}>
         <StartPage changeSpanish={handleClickSpanish} changeEnglish={handleClickEnglish} changeGerman={handleClickGerman} changeFrench={handleClickFrench}></StartPage>
       </div>
+
 
       <div className="main-container">
         <div className="languages">
