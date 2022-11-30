@@ -2,6 +2,8 @@ import React from 'react'
 import './ObjectList.css'
 import { ObjectItem } from '../ObjectItem/ObjectItem.js'
 
+// Component that maps the Object items and sends down appropraite functions for app functionality
+
 export function ObjectList(props) {
 
     return (

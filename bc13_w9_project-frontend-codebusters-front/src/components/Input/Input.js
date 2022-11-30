@@ -2,6 +2,8 @@ import React from 'react'
 import './Input.css'
 import { useForm } from "react-hook-form";
 
+// Input component creates two forms using using react hook form and data is used in handleNewObjct function (from app component) -- no need for state
+
 export function Input(props) {
 
 // first form 
