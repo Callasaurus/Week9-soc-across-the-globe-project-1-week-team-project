@@ -63,6 +63,19 @@ Start the server
   npm start
 ```
 
+Run react testing library tests 
+
+
+```bash
+  npm run test OR npm run test -- <test file name>
+```
+
+Run Cypress tests
+
+```bash
+  npx cypress open
+```
+
 # How to run the back end:
 
 ```bash
