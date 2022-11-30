@@ -1,8 +1,12 @@
 import React from 'react'
 import './ObjectItem.css'
 
+// Component for displaying object items (mapped inside ObjectList) -- add, delete and edit functionality passed down from App
+
 export function ObjectItem(props) {
     
+    // function that facilitates editing and states for pre-filling edit input boxes
+
     function onClicks() {
         props.handleEdit()
         props.editing()

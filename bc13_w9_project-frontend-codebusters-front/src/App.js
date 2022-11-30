@@ -87,7 +87,7 @@ function App() {
     setObject(objectToAddOnScreen);
   }
 
-  // function that toggles whether the 'Add New Resource' box is visible or not (toggled on button click) & calls the addingNotEditing function
+  // function that: toggles whether the 'Add New Resource' box is visible or not (toggled on button click); calls the addingNotEditing function; sets the wholeEditObject array to empty array (resetting input fields for add new resource)
 
   const handleVisibility = event => {
     setVisible(current => !current);
