@@ -2,6 +2,8 @@ import React from 'react'
 import logo from "../../images/logo.png"
 import './Header.css'
 
+// Header buttons select the language prop and toggle the white border around flags
+
 export function Header(props) {
     return (
         <div className="headerDiv">
