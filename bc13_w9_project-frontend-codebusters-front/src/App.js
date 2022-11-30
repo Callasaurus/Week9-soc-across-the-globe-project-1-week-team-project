@@ -4,7 +4,7 @@ import { Header } from './components/Header/Header.js'
 import { Input } from './components/Input/Input.js'
 import { ObjectList } from './components/ObjectList/ObjectList.js'
 import { StartPage } from './components/StartPage/StartPage.js'
-import { useState, useEffect } from 'react'
+import { useState} from 'react'
 
 const url = "http://localhost:3001/api"
 
@@ -40,15 +40,14 @@ function App() {
   const [isActiveFR, setIsActiveFR] = useState(false);
   const [isActiveDE, setIsActiveDE] = useState(false);
 
-  console.log(localStorage)
-
-  // Uncomment to store favourites in local storage (& add line 51 code inside the faveArray useState)
+  // Uncomment to store favourites in local storage (& add JSON.parse code inside the faveArray useState)
 
   // useEffect(() => {
   //   localStorage.setItem('fave', JSON.stringify(faveArray));
   // }, [faveArray]);
 
   // [JSON.parse(localStorage.getItem('fave'))]
+
 
   // fetch request for all objects (called inside handleClick)
 
@@ -223,12 +222,14 @@ function App() {
     setObject(sortedObjects);
   }
 
-  // function that populates the new favourited items into the faveArray state
+  // function that populates the new favourited items into the faveArray state (but no duplicates)
 
   function favourite(id) {
     const editFavourite = object.filter(fave => { return fave.id === id });
+    if (!faveArray.includes(editFavourite[0])) {
     const newArray = [...faveArray, editFavourite[0]];
     setfaveArray(newArray);
+    }
   }
 
   // function that displays the favourite list on button click 
