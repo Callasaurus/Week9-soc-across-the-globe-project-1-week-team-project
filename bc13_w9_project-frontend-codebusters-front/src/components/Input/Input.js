@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 
 export function Input(props) {
 
-console.log(props.editOrAdd)
+console.log(props)
 
 // first form 
 
@@ -13,7 +13,7 @@ const {
     handleSubmit,
     reset,
     formState: { errors }
-  } = useForm({ defaultValues: props.wholeEditObject });
+  } = useForm();
 
   // second form (non-english)
 
@@ -22,7 +22,7 @@ const {
     handleSubmit: handleSubmitNonEnglish,
     reset: resetNonEnglish,
     formState: { errors: errorsNonEnglish }
-  } = useForm({ defaultValues: props.wholeEditObject });
+  } = useForm();
 
   // onsubmit for both forms
   
