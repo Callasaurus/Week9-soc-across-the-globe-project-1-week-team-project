@@ -37,49 +37,49 @@ describe('testing language buttons', () => {
 
     cy.get('.langButtonEnglish').click();
 
-    cy.get('.spanishButton').click()
+    cy.get('#sbutton').click()
 
-    cy.get('.frenchButton').click()
+    cy.get('#fbutton').click()
 
-    cy.get('.germanButton').click()
+    cy.get('#gbutton').click()
 
-    cy.get('.englishButton').click()
+    cy.get('#ebutton').click()
 
     cy.visit(url)
 
     cy.get('.langButtonSpanish').click();
 
-    cy.get('.englishButton').click()
+    cy.get('#ebutton').click()
 
-    cy.get('.frenchButton').click()
+    cy.get('#fbutton').click()
 
-    cy.get('.germanButton').click()
+    cy.get('#gbutton').click()
 
-    cy.get('.spanishButton').click()
+    cy.get('#sbutton').click()
 
     cy.visit(url)
 
     cy.get('.langButtonGerman').click();
 
-    cy.get('.englishButton').click()
+    cy.get('#ebutton').click()
 
-    cy.get('.frenchButton').click() 
+    cy.get('#fbutton').click() 
 
-    cy.get('.spanishButton').click()
+    cy.get('#sbutton').click()
 
-    cy.get('.germanButton').click()
+    cy.get('#gbutton').click()
 
     cy.visit(url)
 
     cy.get('.langButtonFrench').click();
 
-    cy.get('.englishButton').click()
+    cy.get('#ebutton').click()
 
-    cy.get('.spanishButton').click()
+    cy.get('#sbutton').click()
 
-    cy.get('.germanButton').click()
+    cy.get('#gbutton').click()
 
-    cy.get('.frenchButton').click() 
+    cy.get('#fbutton').click() 
 
   })
 })
@@ -96,5 +96,3 @@ describe('counts list elements', () => {
     cy.get('.object-list-container > .list-container').should('have.length', 1)
   })
 })
-
-// cy.get('#tweets-list > li').should('have.length', 3)

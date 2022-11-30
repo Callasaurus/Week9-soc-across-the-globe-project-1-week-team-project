@@ -232,7 +232,7 @@ function App() {
     setObject(faveArray);
   }
 
-  // change the language from a button click on either startpage or header
+  // change the language from a button click on either startpage or header & also adds white borders around flags when clicked in header
 
   function handleLanguage(e) {
     setLanguage(e.target.name)
