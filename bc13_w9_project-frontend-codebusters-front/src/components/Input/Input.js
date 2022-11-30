@@ -3,10 +3,11 @@ import './Input.css'
 import { useForm } from "react-hook-form";
 
 // Input component creates two forms using using react hook form and data is used in handleNewObjct function (from app component) -- no need for state
+// editOrAdd props toggles from true to false depending on editing (no validation required) or adding (validation required)
+// wholeEditObject props holds the object of the item which is being edited - so passed in as default values to pre-populate the input boxes (but not if adding)
 
 export function Input(props) {
 
-console.log(props)
 // first form 
 
 const {

@@ -30,8 +30,7 @@ function App() {
   const [language, setLanguage] = useState('englishDefinitions')
   // State that will be toggled from true to false depending on editing or adding (for validation purposes)
   const [editOrAdd, setEditOrAdd] = useState(false)
-  // state for holding object to edit to be sent to pre-populate edit forms
-  // state for holding object to edit to be sent to pre-populate edit forms
+  // state for holding object to edit to be sent to pre-populate edit forms  
   const [wholeEditObject, setWholeEditObject] = useState([])
 
 
@@ -250,10 +249,13 @@ function App() {
   };
 
   // function that changes editOrAdd state to false (which is passed down to ObjectItem and called on edit button click)
+
   function editing() {
     setEditOrAdd(false)
   }
+
   // function that changes editOrAdd state to true (which called on add new resource button click)
+
   function addingNotEditing() {
     setEditOrAdd(true)
   }
