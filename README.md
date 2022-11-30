@@ -2,24 +2,34 @@
 
 ![Logo](https://i.postimg.cc/Dwp8SNVr/Who-are-you-gonna-call-1.jpg)
 
-# School of Code Across the Globe
+# School of Code Across the Globe (1 week team project)
 
-Our brief: to create an app that would help a bootcamper.
+Our brief: create a full-stack application that will improve the lives of people like ourselves - bootcampers. 
 
-Our app: help ALL bootcampers to understand new terms in English but also in different languages.
+Things to consider: 
+- How to enhance the remote experience of a bootcamper
+- What can help them with the vast amount of learning there is to do as a new developer?
+- What do they need?
+- What problem might they have that your application could solve for them?
+- How can you get into the mindset of your user and keep them at the centre of your problem-solving?
+
+Our app: a full-stack learning resource application that displays data (will operational CRUD routes and functionality) in 4 of the main European languages. This was inspired by one of the team members, Andres, who is currently on the bootcamp and learning to code in his second language! The app is designed to be a useful, pratical and accessible resource tool for a wide range of people. 
 
 ## Skills
 
+Tools and languages:
 - React
-- Sql
+- JavaScript
+- SQL
 - CSS
+- Node.js
 - Express
 
 Testing:
 - Supertest
 - Jest
 - Cypress
-- React testing 
+- React testing library 
 
 
 ## Color Reference
@@ -29,7 +39,7 @@ Testing:
 | Darker colour | #1A1B41 |
 | Lighter colour| #C2E7DA |
 
-We choose these colours to help with accessibility so the app truely was for all. We also checked how these colours worked with colour blind things. 
+We choose these colours to help with accessibility so the app was suitable for all. We also checked to make sure that the colour scheme was appropriate for those with colour blindness. 
 
 
 ## Authors
@@ -44,6 +54,11 @@ We choose these colours to help with accessibility so the app truely was for all
 
 https://user-images.githubusercontent.com/105207906/204262690-acd4b543-825e-4b80-b33a-9ba93a427fa6.mov
 
+# How to clone the repo:
+
+```bash
+  git clone https://github.com/Callasaurus/soc-across-the-globe-project.git
+```
 
 # How to run the front end:
 
@@ -57,10 +72,23 @@ Install dependencies
   npm install
 ```
 
-Start the server
+Open React app
 
 ```bash
   npm start
+```
+
+Run react testing library tests 
+
+
+```bash
+  npm run test OR npm run test -- <test file name>
+```
+
+Run Cypress tests
+
+```bash
+  npx cypress open
 ```
 
 # How to run the back end:
@@ -79,4 +107,10 @@ Start the server
 
 ```bash
   npm run dev
+```
+
+Run supertest tests 
+
+```bash
+  npm run test OR npm run test -- <test file name>
 ```
