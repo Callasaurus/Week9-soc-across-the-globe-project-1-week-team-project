@@ -5,21 +5,21 @@ import {useState} from 'react';
 
 export function StartPage(props) {
 
-const [isActive, setIsActive] = useState(false);
+// const [isActive, setIsActive] = useState(false);
 
-  const handleClick = () => {
-    setIsActive(current => !current);
-}
+//   const handleClick = () => {
+//     setIsActive(current => !current);
+// }
 
     return (
-        <div className="start-container"
+        <div className="start-container">
        
-       style={{
-          backgroundColor: isActive ? '#C2E7DA' : '',
+    {/* //    style={{ */}
+    {/* //       backgroundColor: isActive ? '#C2E7DA' : '',
         
-        }}>
+    //     }}>
 
-        <button onClick={handleClick} className="colourButton"></button>
+    //     <button onClick={handleClick} className="colourButton"></button> */}
 
             <div className="imageDivs">
                 <img className="animation-logo" src={logos} alt="logo" />
