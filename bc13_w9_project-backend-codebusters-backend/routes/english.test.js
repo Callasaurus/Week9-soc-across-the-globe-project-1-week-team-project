@@ -1,11 +1,11 @@
 import request from "supertest"
 import { expect, test } from "@jest/globals"
 import app from "../app.js"
-import { resetTweetsTable } from "../db/helpers"
+import { resetObjectTable } from "../db/helpers"
 import { pool } from "../db/index.js"
 
 beforeEach(() => {
-    return resetTweetsTable();
+    return resetObjectTable();
 });
 
 test("GET all objects", async function () {
@@ -21,7 +21,7 @@ test("GET all objects", async function () {
 })
 
 test("GET specific object", async function () {
-    const response = await request(app).get("/api/englishDefinitions/Object")
+    const response = await request(app).get("/api/englishDefinitions/For loops")
     expect(response.status).toEqual(200)
 
     console.log(response.body)
@@ -29,11 +29,11 @@ test("GET specific object", async function () {
     expect(response.body).toStrictEqual({
         success: true,
         payload: [{
-            id: 1,
-            title: 'Object',
-            definition: 'A JavaScript object is a collection of named values. It is a common practice to declare objects with the const keyword',
-            example: 'https://www.tutorialstonight.com/assets/js/javascript-object.webp',
-            links: 'https://www.w3schools.com/js/js_object_definition.asp',
+            id: 9,
+            title: 'For loops',
+            definition: 'Loops can execute a block of code a number of times.',
+            example: 'https://miro.medium.com/max/1400/1*Wal8vgWVHiYnM0IrnK0p3w.jpeg',
+            links: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for',
             week: 1
         }]
     })
@@ -59,7 +59,7 @@ test("POST a new object", async function () {
 })
 
 test("DELETE an object by id", async function () {
-    const response = await request(app).delete("/api/englishDefinitions/1")
+    const response = await request(app).delete("/api/englishDefinitions/9")
 
     expect(response.status).toEqual(200)
 
@@ -68,11 +68,11 @@ test("DELETE an object by id", async function () {
     expect(response.body).toStrictEqual({
         success: true,
         payload: [{
-            id: 1,
-            title: 'Object',
-            definition: 'A JavaScript object is a collection of named values. It is a common practice to declare objects with the const keyword',
-            example: 'https://www.tutorialstonight.com/assets/js/javascript-object.webp',
-            links: 'https://www.w3schools.com/js/js_object_definition.asp',
+            id: 9,
+            title: 'For loops',
+            definition: 'Loops can execute a block of code a number of times.',
+            example: 'https://miro.medium.com/max/1400/1*Wal8vgWVHiYnM0IrnK0p3w.jpeg',
+            links: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for',
             week: 1
         }]
     })
@@ -98,7 +98,7 @@ test("EDIT an object by id", async function () {
 })
 
 afterAll(() => {
-    return resetTweetsTable();
+    return resetObjectTable();
 });
     
 afterAll(() => {

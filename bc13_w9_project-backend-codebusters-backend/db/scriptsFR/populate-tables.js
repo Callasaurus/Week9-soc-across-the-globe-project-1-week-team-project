@@ -1,8 +1,8 @@
 import { pool } from "../index.js"
-import { populateObjectTable } from "../helpers.js"
+import { populateObjectTableFR } from "../helpersFR.js"
 
 try {
-    await populateObjectTable();
+    await populateObjectTableFR();
     console.log("Populated all tables")
 } catch (err) {
     console.log(err)

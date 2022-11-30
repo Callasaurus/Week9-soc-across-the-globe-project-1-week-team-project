@@ -1,15 +1,15 @@
 import request from "supertest"
 import { expect, test } from "@jest/globals"
 import app from "../app.js"
-import { resetObjectTableES } from "../db/helpersES.js"
+import { resetObjectTableDE } from "../db/helpersDE.js"
 import { pool } from "../db/index.js"
 
 beforeEach(() => {
-    return resetObjectTableES();
+    return resetObjectTableDE();
 });
 
 test("GET all objects", async function () {
-    const response = await request(app).get("/api/spanishDefinitions")
+    const response = await request(app).get("/api/germanDefinitions")
     expect(response.status).toEqual(200)
 
     console.log(response.body)
@@ -21,7 +21,7 @@ test("GET all objects", async function () {
 })
 
 test("GET specific object", async function () {
-    const response = await request(app).get("/api/spanishDefinitions/Bucle for")
+    const response = await request(app).get("/api/germanDefinitions/For-Schleifen")
     expect(response.status).toEqual(200)
 
     console.log(response.body)
@@ -29,11 +29,11 @@ test("GET specific object", async function () {
     expect(response.body).toStrictEqual({
         success: true,
         payload: [{
-            id: 3,
+            id: 10,
             englishtitle: 'For loops',
-            title: 'Bucle for',
-            definition: 'Los bucles pueden ejecutar un bloque de código varias veces.',
-            example: 'https://miro.medium.com/max/1400/1*Wal8vgWVHiYnM0IrnK0p3w.jpeg',
+            title: 'For-Schleifen',
+            definition: 'Schleifen können einen Codeblock mehrmals ausführen.',
+            example: 'https://cdn.programiz.com/sites/tutorial2program/files/working-javascript-continue-statement.pnG',
             links: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for',
             week: 1
         }]
@@ -41,7 +41,7 @@ test("GET specific object", async function () {
 })
 
 test("GET specific object in english", async function () {
-    const response = await request(app).get("/api/spanishDefinitions/english/For loops")
+    const response = await request(app).get("/api/germanDefinitions/english/For loops")
     expect(response.status).toEqual(200)
 
     console.log(response.body)
@@ -49,11 +49,11 @@ test("GET specific object in english", async function () {
     expect(response.body).toStrictEqual({
         success: true,
         payload: [{
-            id: 3,
+            id: 10,
             englishtitle: 'For loops',
-            title: 'Bucle for',
-            definition: 'Los bucles pueden ejecutar un bloque de código varias veces.',
-            example: 'https://miro.medium.com/max/1400/1*Wal8vgWVHiYnM0IrnK0p3w.jpeg',
+            title: 'For-Schleifen',
+            definition: 'Schleifen können einen Codeblock mehrmals ausführen.',
+            example: 'https://cdn.programiz.com/sites/tutorial2program/files/working-javascript-continue-statement.pnG',
             links: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for',
             week: 1
         }]
@@ -61,7 +61,7 @@ test("GET specific object in english", async function () {
 })
 
 test("POST a new object", async function () {
-    const response = await (await request(app).post("/api/spanishDefinitions").send({ englishtitle: 'test', title: 'test', definition: 'test', example: 'test', links: 'test', week: 1 }))
+    const response = await (await request(app).post("/api/germanDefinitions").send({ englishtitle: 'test', title: 'test', definition: 'test', example: 'test', links: 'test', week: 1 }))
     expect(response.status).toEqual(200)
 
     console.log(response.body)
@@ -81,7 +81,7 @@ test("POST a new object", async function () {
 })
 
 test("DELETE an object by id", async function () {
-    const response = await request(app).delete("/api/spanishDefinitions/3")
+    const response = await request(app).delete("/api/germanDefinitions/10")
 
     expect(response.status).toEqual(200)
 
@@ -90,11 +90,11 @@ test("DELETE an object by id", async function () {
     expect(response.body).toStrictEqual({
         success: true,
         payload: [{
-            id: 3,
+            id: 10,
             englishtitle: 'For loops',
-            title: 'Bucle for',
-            definition: 'Los bucles pueden ejecutar un bloque de código varias veces.',
-            example: 'https://miro.medium.com/max/1400/1*Wal8vgWVHiYnM0IrnK0p3w.jpeg',
+            title: 'For-Schleifen',
+            definition: 'Schleifen können einen Codeblock mehrmals ausführen.',
+            example: 'https://cdn.programiz.com/sites/tutorial2program/files/working-javascript-continue-statement.pnG',
             links: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for',
             week: 1
         }]
@@ -102,7 +102,7 @@ test("DELETE an object by id", async function () {
 })
 
 test("EDIT an object by id", async function () {
-    const response = await (await request(app).patch("/api/spanishDefinitions/1").send({ englishtitle: 'test patch', title: 'test patch', definition: 'test patch', example: 'test patch', links: 'test patch', week: 5 }))
+    const response = await (await request(app).patch("/api/germanDefinitions/1").send({ englishtitle: 'test patch', title: 'test patch', definition: 'test patch', example: 'test patch', links: 'test patch', week: 5 }))
     expect(response.status).toEqual(200)
 
     console.log(response.body)
@@ -122,7 +122,7 @@ test("EDIT an object by id", async function () {
 })
 
 afterAll(() => {
-    return resetObjectTableES();
+    return resetObjectTableDE();
 });
     
 afterAll(() => {

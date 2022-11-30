@@ -1,8 +1,8 @@
 import { pool } from "../index.js"
-import { resetObjectTable } from "../helpers.js"
+import { resetObjectTableFR } from "../helpersFR.js"
 
 try {
-    await resetObjectTable();
+    await resetObjectTableFR();
     console.log("Reset all tables")
 } catch (err) {
     console.log(err)

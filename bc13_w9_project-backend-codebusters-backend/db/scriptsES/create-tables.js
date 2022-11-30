@@ -1,8 +1,8 @@
 import { pool } from "../index.js"
-import { createTweetsTableES } from "../helpers.js"
+import { createObjectTableES } from "../helpersES.js"
 
 try {
-    await createTweetsTableES();
+    await createObjectTableES();
     console.log("Created all tables")
 } catch (err) {
     console.log(err)
