@@ -11,8 +11,15 @@
 .headerButtons {
   display: flex;
   justify-content: flex-end;
+  align-self: flex-end;
   /* margin-left: 1200px;
   padding: 10px; */
+}
+
+.headerDiv{
+  display: flex;
+  flex-direction: column;
+  width: 90vw
 }
 
 .englishButton {
@@ -47,7 +54,6 @@
   background-repeat: no-repeat;
   background-position: center;
   width: 5vw;
-  min-width: 100px;
   height: 5vh;
   margin: 2%;
   border-color: white;
