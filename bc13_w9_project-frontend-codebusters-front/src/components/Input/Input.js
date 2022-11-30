@@ -6,12 +6,16 @@ export function Input(props) {
 
 console.log(props.editOrAdd)
 
+// first form 
+
 const {
     register,
     handleSubmit,
     reset,
     formState: { errors }
   } = useForm({ defaultValues: props.wholeEditObject });
+
+  // second form (non-english)
 
   const {
     register: registerNonEnglish,
@@ -20,6 +24,8 @@ const {
     formState: { errors: errorsNonEnglish }
   } = useForm({ defaultValues: props.wholeEditObject });
 
+  // onsubmit for both forms
+  
   const onSubmit = (data) => {
     props.handleNewObject(data);
     props.visibility()
@@ -42,7 +48,7 @@ if (props.language === 'englishDefinitions') {
                 name="title" 
                 {...register("title", {
                     required: props.editOrAdd,
-                    minLength: 3
+                    minLength: 3, 
                 })} 
                 defaultValue={props.wholeEditObject.title}>
                 </input> 
