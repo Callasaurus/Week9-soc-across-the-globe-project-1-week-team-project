@@ -5,6 +5,12 @@ import './ObjectItem.css'
 
 export function ObjectItem(props) {
 
+    function onClicks() {
+        props.handleEdit()
+        props.editing()
+        props.holdEditObject()
+    }
+
     return (
         <div className="item-container">
             <img alt="examples" src={props.example}></img>
@@ -26,7 +32,7 @@ export function ObjectItem(props) {
 
                 <div className="buttonDiv">
                     <button className="buttons" onClick={props.handleDelete}>Delete  🗑</button>
-                    <button className="buttons" onClick={props.handleEdit}>Edit  📝</button>
+                    <button className="buttons" onClick={onClicks}>Edit  📝</button>
                     <button className="buttons" onClick={props.handleFavourite}>Favourite ⭐️</button>
                 </div>
             </div>
