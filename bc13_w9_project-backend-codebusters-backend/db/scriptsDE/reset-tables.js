@@ -1,8 +1,8 @@
 import { pool } from "../index.js"
-import { resetTweetsTableES } from "../helpersES.js"
+import { resetTweetsTableDE } from "../helpersDE.js"
 
 try {
-    await resetTweetsTableES();
+    await resetTweetsTableDE();
     console.log("Reset all tables")
 } catch (err) {
     console.log(err)
