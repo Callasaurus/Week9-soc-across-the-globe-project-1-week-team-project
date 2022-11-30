@@ -69,3 +69,13 @@
   height: 10vh;
   margin: 2%;
 }
+
+.colourButton {
+  background-image: url(../../images/paint-brush-color-wheel-palette-blue-handle-44844451.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 10vw;
+  height: 10vh;
+  margin: 2%;
+}
