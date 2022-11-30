@@ -82,6 +82,7 @@ function App() {
   const handleVisibility = event => {
     setVisible(current => !current);
     addingNotEditing()
+    setWholeEditObject([])
   }
 
   // edit request for specific object (handed down edit-sepcific input component)
@@ -231,7 +232,7 @@ function App() {
   function handleClickSpanish() {
     setLanguage('spanishDefinitions');
     changeStartState();
-    setIsActiveES(current => !current);
+    setIsActiveES(true);
     setIsActive(false);
     setIsActiveDE(false);
     setIsActiveFR(false);
@@ -241,7 +242,7 @@ function App() {
   function handleClickFrench() {
     setLanguage('frenchDefinitions');
     changeStartState();
-    setIsActiveFR(current => !current);
+    setIsActiveFR(true);
     setIsActive(false);
     setIsActiveDE(false);
     setIsActiveES(false);
@@ -251,7 +252,7 @@ function App() {
   function handleClickGerman() {
     setLanguage('germanDefinitions');
     changeStartState();
-    setIsActiveDE(current => !current);
+    setIsActiveDE(true);
     setIsActive(false);
     setIsActiveFR(false);
     setIsActiveES(false);
@@ -261,7 +262,7 @@ function App() {
   function handleClickEnglish() {
     setLanguage('englishDefinitions');
     changeStartState();
-    setIsActive(current => !current);
+    setIsActive(true);
     setIsActiveES(false);
     setIsActiveFR(false);
     setIsActiveDE(false);
