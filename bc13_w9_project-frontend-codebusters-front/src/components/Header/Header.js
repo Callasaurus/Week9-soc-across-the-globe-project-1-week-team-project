@@ -17,15 +17,16 @@ export function Header(props) {
 
             <div className="headerDiv">
                 <div className="imageDiv">
-                    <img className="image" src={logo} alt="logo"></img>
+                    <img className="image" src={logo} alt="logo" data-testid="logo"></img>
                 </div>
 
                 <div className="headerTitle">
                     <div className="titleDiv">
-                        <h1 className="title">  School of Code{"\n"}Across the Globe</h1>
+                        <h1 className="title">  School of Code {"\n"} Across the Globe</h1>
                     </div>
                 </div>
             </div>
         </div>
     )
 }
+

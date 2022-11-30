@@ -30,8 +30,8 @@ test('renders title', () => {
    
 });
 
-
-test('renders flags', () => {
+describe('renders language buttons', () => {
+it ('renders flags', () => {
     //ARRANGE
   render(<StartPage />);
  
@@ -42,7 +42,7 @@ test('renders flags', () => {
     expect(flagElement).toHaveLength(4);
 });
 
-test('buttons click', () => {
+it('buttons click', () => {
     //ARRANGE
     render(<StartPage />);
     
@@ -55,4 +55,4 @@ test('buttons click', () => {
     
     //ASSERT
     expect(buttonClick).toHaveLength(4);
-});
+})});
