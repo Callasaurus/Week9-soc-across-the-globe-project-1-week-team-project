@@ -25,14 +25,14 @@ export function StartPage(props) {
                 <img className="animation-logo" src={logos} alt="logo" />
             </div>
 
-            <h3 id="title" className="chooseYourLanguage"
+            <h3 id="title" className="chooseYourLanguage">
 
-                 style={{
-             color: isActive ? '#1A1B41' : '',
-        }}
-        onClick={handleClick}
+        {/* //          style={{
+        //      color: isActive ? '#1A1B41' : '',
+        // }}
+        // onClick={handleClick} */}
 
-        >Choose Your Language</h3>
+        Choose Your Language</h3>
 
             <div className="langButtonDiv">
                 <button id="langButtonEnglish" className="langButtonEnglish" onClick={props.changeEnglish}></button>
