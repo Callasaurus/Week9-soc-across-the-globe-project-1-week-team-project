@@ -9,27 +9,29 @@ export function FilterBar(props) {
         return (
             <div>
                 <div className="searchBar"> 
-                    <input className="input" onChange={props.handleChange} placeholder="Enter search here"></input>
+                    <input className="input" onChange={props.handleChange} value={props.input} placeholder="Enter search here"></input>
                 </div> 
                 <div className="buttonDiv">
-                    <button className="searchButton" onClick={props.handleClick}>Search</button>
-                    <button className="getAllButton" onClick={props.handleClick}>Get All</button>
+                    <button className="searchButton" onClick={props.handleClickSearch}>Search</button>
+                    <button className="getAllButton" onClick={props.handleClickGetAll}>Get All</button>
                     <button className="sortByWeekButton" onClick={props.handleSort}>Sort by week</button>
                     <button className="favouriteButton" onClick={props.displayFave}>Show favourites</button>
                 </div>
             </div>
         )
-    }else{
+    
+    } else {
+        
         return (
             <div className="languagesDiv">
-                    <input className="input" onChange={props.handleTranslate} placeholder="Enter word in English to get translation"></input>
+                    <input className="input" onChange={props.handleTranslate} value={props.translateSearch} placeholder="Enter word in English to get translation"></input>
                 <div className="translatorButtonDiv">
-                    <button className="translatorButton" onClick={props.foreignClick}>Get translation</button>
+                    <button className="translatorButton" onClick={props.handleTranslationSearch}>Get translation</button>
                 </div>      
-                    <input className="input" onChange={props.handleChange} placeholder="Enter search here"></input>
+                    <input className="input" onChange={props.handleChange} value={props.input} placeholder="Enter search here"></input>
                 <div className="buttonDiv">
-                    <button className="searchButton" onClick={props.handleClick}>Search</button>
-                    <button className="getAllButton" onClick={props.handleClick}>Get All</button>
+                    <button className="searchButton" onClick={props.handleClickSearch}>Search</button>
+                    <button className="getAllButton" onClick={props.handleClickGetAll}>Get All</button>
                     <button className="sortByWeekButton" onClick={props.handleSort}>Sort by week</button>
                     <button className="favouriteButton" onClick={props.displayFave}>Show favourites</button>
                 </div>
