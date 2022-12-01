@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 export function Input(props) {
 
 // first form 
+console.log(props)
 
 const {
     register,

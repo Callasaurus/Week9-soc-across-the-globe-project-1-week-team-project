@@ -108,7 +108,7 @@ function App() {
 
     if (language === 'englishDefinitions') {
 
-      if (newEdit.title) {
+      if (newEdit) {
         original[0].title = newEdit.title
       } if (newEdit.definition) {
         original[0].definition = newEdit.definition
@@ -278,11 +278,11 @@ function App() {
       </div>
 
       <div className="form-container" style={{ visibility: isVisible ? 'visible' : 'hidden' }}>
-        <Input visibility={handleVisibility} handleNewObject={handleNewObject} language={language} editOrAdd={editOrAdd} required={true} wholeEditObject={wholeEditObject}></Input>
+        <Input visibility={handleVisibility} handleNewObject={handleNewObject} language={language} editOrAdd={editOrAdd} wholeEditObject={wholeEditObject}></Input>
       </div>
 
       <div className="form-container" style={{ visibility: isEditVisible ? 'visible' : 'hidden' }}>
-        <Input visibility={handleVisibilityEdit} handleNewObject={handleEdit} language={language} editOrAdd={editOrAdd} required={false} wholeEditObject={wholeEditObject}></Input>
+        <Input visibility={handleVisibilityEdit} handleNewObject={handleEdit} language={language} editOrAdd={editOrAdd} wholeEditObject={wholeEditObject}></Input>
       </div>
 
       <div className="main-container">
