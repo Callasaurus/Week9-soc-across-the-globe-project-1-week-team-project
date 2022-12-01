@@ -105,23 +105,6 @@ function App() {
   // function that creates a new edited object (if values unchanged, original ones are kept) - called inside handleEdit
   
   function createEditObject(original, newEdit) {
-
-    if (language === 'englishDefinitions') {
-
-      if (newEdit) {
-        original[0].title = newEdit.title
-      } if (newEdit.definition) {
-        original[0].definition = newEdit.definition
-      } if (newEdit.example) {
-        original[0].example = newEdit.example
-      } if (newEdit.links) {
-        original[0].links = newEdit.links
-      } if (newEdit.week) {
-        original[0].week = newEdit.week
-      }
-    
-    } else {
-
       if (newEdit.englishtitle) {
         original[0].englishtitle = newEdit.englishtitle
       } if (newEdit.title) {
@@ -134,8 +117,7 @@ function App() {
         original[0].links = newEdit.links
       } if (newEdit.week) {
         original[0].week = newEdit.week
-      }
-    }
+      } 
     return original
   }
 
