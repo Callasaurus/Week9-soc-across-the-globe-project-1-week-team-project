@@ -13,7 +13,7 @@ Things to consider:
 - What problem might they have that your application could solve for them?
 - How can you get into the mindset of your user and keep them at the centre of your problem-solving?
 
-Our app: a full-stack learning resource application that displays data (will operational CRUD routes and functionality) in 4 of the main European languages. This was inspired by one of the team members, Andres, who is currently on the bootcamp and learning to code in his second language! The app is designed to be a useful, pratical and accessible resource tool for a wide range of people. 
+Our app: a full-stack learning resource application that displays data (with operational CRUD routes and functionality) in 4 of the main European languages. This was inspired by one of the team members, Andres, who is currently on the bootcamp and learning to code in his second language! The app is designed to be a useful, pratical and accessible resource tool for a wide range of people. 
 
 ## Skills
 
