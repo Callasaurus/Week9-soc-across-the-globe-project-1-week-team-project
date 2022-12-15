@@ -12,8 +12,8 @@ export function FilterBar(props) {
                     <input className="input" onChange={props.handleChange} value={props.input} placeholder="Enter search here"></input>
                 </div> 
                 <div className="buttonDiv">
-                    <button className="searchButton" onClick={props.handleClickSearch}>Search</button>
-                    <button className="getAllButton" onClick={props.handleClickGetAll}>Get All</button>
+                    <button className="searchButton" onClick={props.getByTitle}>Search</button>
+                    <button className="getAllButton" onClick={props.getAllObjects}>Get All</button>
                     <button className="sortByWeekButton" onClick={props.handleSort}>Sort by week</button>
                     <button className="favouriteButton" onClick={props.displayFave}>Show favourites</button>
                 </div>
@@ -26,12 +26,12 @@ export function FilterBar(props) {
             <div className="languagesDiv">
                     <input className="input" onChange={props.handleTranslate} value={props.translateSearch} placeholder="Enter word in English to get translation"></input>
                 <div className="translatorButtonDiv">
-                    <button className="translatorButton" onClick={props.handleTranslationSearch}>Get translation</button>
+                    <button className="translatorButton" onClick={props.getByForeignTitle}>Get translation</button>
                 </div>      
                     <input className="input" onChange={props.handleChange} value={props.input} placeholder="Enter search here"></input>
                 <div className="buttonDiv">
-                    <button className="searchButton" onClick={props.handleClickSearch}>Search</button>
-                    <button className="getAllButton" onClick={props.handleClickGetAll}>Get All</button>
+                    <button className="searchButton" onClick={props.getByTitle}>Search</button>
+                    <button className="getAllButton" onClick={props.getAllObjects}>Get All</button>
                     <button className="sortByWeekButton" onClick={props.handleSort}>Sort by week</button>
                     <button className="favouriteButton" onClick={props.displayFave}>Show favourites</button>
                 </div>

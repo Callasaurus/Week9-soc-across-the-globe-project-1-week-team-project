@@ -4,7 +4,7 @@ import { Header } from './components/Header/Header.js'
 import { Input } from './components/Input/Input.js'
 import { ObjectList } from './components/ObjectList/ObjectList.js'
 import { StartPage } from './components/StartPage/StartPage.js'
-import { useState} from 'react'
+import { useState } from 'react'
 
 const url = "http://localhost:3001/api"
 
@@ -15,7 +15,7 @@ function App() {
   // Input sent from FilterBar for the specific get request
   const [input, setInput] = useState("")
   // Foreign search input sent from FilterBar for the specific get request
-  const [translateSearch, setTranslateSearch] = useState()
+  const [translateSearch, setTranslateInput] = useState()
   // Visibility for the 'create new object' form
   const [isVisible, setVisible] = useState()
   // Visibility for the 'edit object' form
@@ -43,28 +43,35 @@ function App() {
       // [JSON.parse(localStorage.getItem('fave'))]
 
 
-  // fetch request for all objects (called inside handleClick)
+  // fetch request for all objects, returns and renders all (all languages) & resets all input fields
 
   async function getAllObjects() {
     const allObjects = await fetch(`${url}/${language}`);
     let data = await allObjects.json();
-    return data.payload;
+    setObject(data.payload)
+    setInput('')
+    setTranslateInput('')
   }
 
-  // fetch request for specific object(s) (called inside handleClick)
+  // fetch request for specific object(s), returns and renders specific items based on search and click of 'search button' (all languages) & resets all input fields
 
   async function getByTitle() {
     const titleObject = await fetch(`${url}/${language}/${input}`);
     let data = await titleObject.json();
-    return data.payload;
+    // return data.payload;
+    setObject(data.payload);
+    setInput('')
+    setTranslateInput('')
   }
 
-  // fetch request for specific object(s) in non-English language (called inside handleTranslation)
+  // fetch request for specific object(s) in non-English language, returns and renders items (when on a foreign language endpoint) & resets all input fields
 
   async function getByForeignTitle() {
     const titleObject = await fetch(`${url}/${language}/english/${translateSearch}`);
     let data = await titleObject.json();
-    return data.payload;
+    setObject(data.payload);
+    setInput('')
+    setTranslateInput('')
   }
 
   // post request for new object (handed down to input component)
@@ -83,11 +90,10 @@ function App() {
 
   // function that: toggles whether the 'Add New Resource' box is visible or not (toggled on button click); calls the addingNotEditing function; sets the wholeEditObject array to empty array (resetting input fields for add new resource)
 
-  const handleVisibility = event => {
+  const handleAddVisibility = event => {
     setVisible(current => !current);
     addingNotEditing()
     setWholeEditObject([])
-
   }
 
   // edit request for specific object (handed down edit-sepcific input component)
@@ -123,10 +129,12 @@ function App() {
 
   // Function that sets the editObject state to be the id of the item to edit (passed down to object list and mapped to object items) & calls the function that makes the edit input box visible 
   
-  function handleObjectState(object) {
+  function handleEditObjectState(object) {
     setEditObject(object);
     handleVisibilityEdit();
   }
+
+  // Function that populates the wholeEditObject state with the object that the edit button is clicked on (used to pre-populate edit form)
 
   function holdEditObject(object) {
     setWholeEditObject(object)
@@ -152,43 +160,16 @@ function App() {
     } return
   }
 
-  // function that returns and renders specific items based on search and click of 'search button' (all languages) & resets all input fields
+  // function that is passed down to the filter bar that takes in the state of the the text input in the translate search bar 
 
-  async function handleClickSearch() {
-      const titleObject = await getByTitle();
-      setObject(titleObject);
-      setInput('')
-      setTranslateSearch('')
-    }
-
-  // function that returns and renders all items (all languages) & resets all input fields
-
-  async function handleClickGetAll() {
-    const objects = await getAllObjects();
-    setObject(objects)
-    setInput('')
-    setTranslateSearch('')
+  function handleTranslateSearch(e) {
+    setTranslateInput(e.target.value);
   }
-  
-  // function that returns and renders specific items based on a search in english (when on a foreign language endpoint) & resets all input fields
-
-  async function handleTranslationSearch() {
-      const titleObject = await getByForeignTitle();
-      setObject(titleObject);
-      setInput('')
-      setTranslateSearch('')
-    }
 
   // function that is passed down to the filter bar that takes in the state of the the text input in the main search bar 
 
   function handleChange(e) {
     setInput(e.target.value);
-  }
-
-  // function that is passed down to the filter bar that takes in the state of the the text input in the translate search bar 
-
-  function handleTranslateSearch(e) {
-    setTranslateSearch(e.target.value);
   }
 
   // function that sorts the objects in ascending order (by week)
@@ -255,12 +236,12 @@ function App() {
         </div>
 
         <div className="search-bar">
-        <FilterBar handleClickGetAll={handleClickGetAll} handleTranslationSearch={handleTranslationSearch} language={language} handleClickSearch={handleClickSearch} handleTranslate={handleTranslateSearch} handleChange={handleChange} handleSort={sortByWeek} displayFave={displayFavourite} input={input} translateSearch={translateSearch}></FilterBar>
+        <FilterBar getAllObjects={getAllObjects} getByForeignTitle={getByForeignTitle} language={language} getByTitle={getByTitle} handleTranslate={handleTranslateSearch} handleChange={handleChange} handleSort={sortByWeek} displayFave={displayFavourite} input={input} translateSearch={translateSearch}></FilterBar>
         </div>
       </div>
 
       <div className="form-container" style={{ visibility: isVisible ? 'visible' : 'hidden' }}>
-        <Input visibility={handleVisibility} handleNewObject={handleNewObject} language={language} editOrAdd={editOrAdd} wholeEditObject={wholeEditObject}></Input>
+        <Input visibility={handleAddVisibility} handleNewObject={handleNewObject} language={language} editOrAdd={editOrAdd} wholeEditObject={wholeEditObject}></Input>
       </div>
 
       <div className="form-container" style={{ visibility: isEditVisible ? 'visible' : 'hidden' }}>
@@ -268,8 +249,8 @@ function App() {
       </div>
 
       <div className="main-container">
-        <button className="addNewButton" onClick={handleVisibility}>Add New Resource</button>
-        <ObjectList object={object} handleFavourite={favourite} handleDelete={handleDelete} handleEdit={handleObjectState} editing={editing} holdEditObject={holdEditObject}></ObjectList>
+        <button className="addNewButton" onClick={handleAddVisibility}>Add New Resource</button>
+        <ObjectList object={object} handleFavourite={favourite} handleDelete={handleDelete} handleEdit={handleEditObjectState} editing={editing} holdEditObject={holdEditObject}></ObjectList>
       </div>
     </div>
   );
