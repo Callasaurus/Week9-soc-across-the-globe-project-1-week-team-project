@@ -39,7 +39,7 @@ function App() {
       // useEffect(() => {
       //   localStorage.setItem('fave', JSON.stringify(faveArray));
       // }, [faveArray]);
-      
+
       // [JSON.parse(localStorage.getItem('fave'))]
 
 
@@ -58,7 +58,6 @@ function App() {
   async function getByTitle() {
     const titleObject = await fetch(`${url}/${language}/${input}`);
     let data = await titleObject.json();
-    // return data.payload;
     setObject(data.payload);
     setInput('')
     setTranslateInput('')
@@ -90,7 +89,7 @@ function App() {
 
   // function that: toggles whether the 'Add New Resource' box is visible or not (toggled on button click); calls the addingNotEditing function; sets the wholeEditObject array to empty array (resetting input fields for add new resource)
 
-  const handleAddVisibility = event => {
+  function handleAddVisibility() {
     setVisible(current => !current);
     addingNotEditing()
     setWholeEditObject([])
@@ -109,26 +108,19 @@ function App() {
   }
 
   // function that creates a new edited object (if values unchanged, original ones are kept) - called inside handleEdit
-  
+
   function createEditObject(original, newEdit) {
-      if (newEdit.englishtitle) {
-        original[0].englishtitle = newEdit.englishtitle
-      } if (newEdit.title) {
-        original[0].title = newEdit.title
-      } if (newEdit.definition) {
-        original[0].definition = newEdit.definition
-      } if (newEdit.example) {
-        original[0].example = newEdit.example
-      } if (newEdit.links) {
-        original[0].links = newEdit.links
-      } if (newEdit.week) {
-        original[0].week = newEdit.week
-      } 
+    const keys = Object.keys(newEdit)
+    for (let i = 0; i < keys.length; i++) {
+      if (newEdit[keys[i]]) {
+        original[0][keys[i]] = newEdit[keys[i]]
+      }
+    }
     return original
   }
 
   // Function that sets the editObject state to be the id of the item to edit (passed down to object list and mapped to object items) & calls the function that makes the edit input box visible 
-  
+
   function handleEditObjectState(object) {
     setEditObject(object);
     handleVisibilityEdit();
@@ -142,10 +134,10 @@ function App() {
 
   // function that toggles whether the 'Edit' box is visible or not (toggled on button click)
 
-  const handleVisibilityEdit = event => {
+  function handleVisibilityEdit() {
     setEditVisible(current => !current);
   }
-  
+
   // delete request for specific object (handed down to object list component and then object component)
 
   async function handleDelete(id) {
@@ -184,8 +176,8 @@ function App() {
   function favourite(id) {
     const editFavourite = object.filter(fave => { return fave.id === id });
     if (!faveArray.includes(editFavourite[0])) {
-    const newArray = [...faveArray, editFavourite[0]];
-    setfaveArray(newArray);
+      const newArray = [...faveArray, editFavourite[0]];
+      setfaveArray(newArray);
     }
   }
 
@@ -205,7 +197,7 @@ function App() {
 
   // function that toggles whether the StartPage is visible or not 
 
-  const changeStartState = event => {
+  function changeStartState() {
     if (isStartPageVisible) {
       setIsStartPageVisible(current => !current);
     }
@@ -236,7 +228,7 @@ function App() {
         </div>
 
         <div className="search-bar">
-        <FilterBar getAllObjects={getAllObjects} getByForeignTitle={getByForeignTitle} language={language} getByTitle={getByTitle} handleTranslate={handleTranslateSearch} handleChange={handleChange} handleSort={sortByWeek} displayFave={displayFavourite} input={input} translateSearch={translateSearch}></FilterBar>
+          <FilterBar getAllObjects={getAllObjects} getByForeignTitle={getByForeignTitle} language={language} getByTitle={getByTitle} handleTranslate={handleTranslateSearch} handleChange={handleChange} handleSort={sortByWeek} displayFave={displayFavourite} input={input} translateSearch={translateSearch}></FilterBar>
         </div>
       </div>
 
@@ -254,6 +246,6 @@ function App() {
       </div>
     </div>
   );
-  }
+}
 
 export default App;
