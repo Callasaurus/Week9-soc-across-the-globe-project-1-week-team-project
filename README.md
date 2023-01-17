@@ -24,6 +24,7 @@ Tools and languages:
 - CSS
 - Node.js
 - Express
+- Deployment (front and back end)
 
 Testing:
 - Supertest
