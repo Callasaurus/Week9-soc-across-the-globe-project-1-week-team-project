@@ -1,6 +1,6 @@
-import pkg from "pg";
+import pg from "pg";
 
-const { Pool } = pkg
+const { Pool } = pg
 
 const databaseUrl = process.env.POSTGRES_CONNECTION_URL;
 
